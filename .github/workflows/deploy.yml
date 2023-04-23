@@ -14,7 +14,7 @@ jobs:
         with:
           build-command: VITE_GIT_SHA=$GITHUB_SHA VITE_VERSION=${GITHUB_REF##*/} yarn build --mode ghpages
           deploy-project-name: template-tailwind
-          deploy-token: ${{ secrets.DEPLOY_TOKEN }}
+          deploy-token: ${{ secrets.DEPLOY_TOKEN_FE }}
 
       # this is to deploy to GH page, not required, Here as an example
       - name: add 404
