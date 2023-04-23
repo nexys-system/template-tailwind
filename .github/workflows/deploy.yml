@@ -15,6 +15,11 @@ jobs:
           build-command: VITE_GIT_SHA=$GITHUB_SHA VITE_VERSION=${GITHUB_REF##*/} yarn build --mode ghpages
       - name: add 404
         run: cp dist/index.html dist/404.html
+      - name: deploy nexys
+        run: |
+          zip -r dist.zip dist
+          curl -k -X POST -H "X-TOKEN: ${{ secrets.DEPLOY_TOKEN }}" -F \"file=@dist.zip\" -F \"project=template-tailwind\" https://deploy.nexys.io/upload
+          rm dist.zip
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
