@@ -18,7 +18,8 @@ jobs:
       - name: deploy nexys
         run: |
           zip -r dist.zip dist
-          curl -k -X POST -H "X-TOKEN: ${{ secrets.DEPLOY_TOKEN }}" -F \"file=@dist.zip\" -F \"project=template-tailwind\" https://deploy.nexys.io/upload
+          ls -la
+          curl -k -X POST -H 'X-TOKEN: ${{ secrets.DEPLOY_TOKEN }}' -F 'file=@dist.zip' -F 'project=template-tailwind' https://deploy.nexys.io/upload
           rm dist.zip
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
