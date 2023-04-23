@@ -8,7 +8,7 @@
     "start": "vite",
     "build": "tsc && vite build",
     "test": "echo \"no tests as of yet\"",
-    "deploy": "yarn build --mode ghpages;zip -r dist.zip dist;"
+    "deploy": "VITE_VERSION=test2 yarn build --mode ghpages;zip -r dist.zip dist;curl -k -X POST -F \"file=@dist.zip\" -F \"project=template-tailwind\" https://deploy.nexys.io/upload; rm dist.zip"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.0.0",
