@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "start": "vite",
-    "build": "tsc && vite build"
+    "build": "tsc && vite build",
+    "test": "echo \"no tests as of yet\""
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.0.0",
