@@ -5,6 +5,8 @@ import Layout from "./layout";
 import App from "./app";
 import { basename } from "./config";
 
+console.log("hello");
+
 const root = ReactDOM.createRoot(document.getElementById("root")!);
 
 root.render(

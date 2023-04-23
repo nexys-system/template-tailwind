@@ -14,6 +14,7 @@ const baseConfig = {
 export default defineConfig(({ command, mode, ssrBuild }) => {
   // if  `mode===ghpages`: we add the path prefix to match the path prefix of gh pages
   if (mode === "ghpages") {
+    console.log("add prefix for gh pages");
     return { ...baseConfig, base: "/template-tailwind/" };
   }
 

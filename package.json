@@ -7,7 +7,8 @@
   "scripts": {
     "start": "vite",
     "build": "tsc && vite build",
-    "test": "echo \"no tests as of yet\""
+    "test": "echo \"no tests as of yet\"",
+    "deploy": "yarn build --mode ghpages;zip -r dist.zip dist;"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.0.0",
